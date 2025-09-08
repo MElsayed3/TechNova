@@ -1,0 +1,1804 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="Bootstrap 4/css/bootstrap.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+<style>
+	body{
+		font-family:Arial, "sans-serif";
+		overflow: hidden;
+	}
+	/*hiding the content*/
+	.content{
+		opacity: 0;
+	}
+	
+	
+	/*laoder*/
+	
+	.loader_background{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(26,31,37,1.00);
+	}
+	.box_wrapper{
+		perspective: 600px;
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		text-align: center;
+	}
+	.box{
+		width: inherit;
+		height: inherit;
+		transform-style: preserve-3d;
+		animation: rotate_loader 5s linear infinite;
+	}
+	.box h4{
+		text-align: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left:0;
+		right: 0;
+		margin: auto;
+		animation: rotate_loader 5s linear infinite;
+		animation-direction: reverse;
+		color: rgba(255,255,255,1.00);
+		line-height: 150px;
+	}
+	.box div.sides{
+		width: inherit;
+		height: inherit;
+		position: absolute;
+		background: linear-gradient(to top right,  rgba(0,51,100,0.50) ,  rgba(160,208,224,0.50));
+	}
+	.box .front{
+		transform: translateZ(75px);
+	}
+	.box .back{ 
+		transform: rotateY(180deg) translateZ(75px);
+	}
+	
+	.box .left{ 
+		transform: rotateY(-90deg) translateX(-75px);
+		transform-origin: left;
+	}
+	.box .right{
+		transform: rotateY(90deg) translateX(75px);
+		transform-origin: right;
+	}
+	.box .top{
+		transform: rotateX(-90deg) translateY(-75px);
+		transform-origin: top;
+	}
+	.box .bottom{
+		transform: rotateX(90deg) translateY(75px);
+		transform-origin: bottom;
+	}
+	
+	.box_wrapper .loading_bar{
+		height: 3px;
+		width: 1px;
+		background: linear-gradient(to top right,  rgba(0,51,100,0.50) ,  rgba(160,208,224,0.50));
+		margin-top: 30px;
+		animation: loading_bar_fullWidth 5s linear forwards;
+/*		animation-fill-mode: */
+	}
+	
+	@keyframes rotate_loader{
+		0%{
+			transform: rotateY(0deg);
+		}
+		100%{
+			transform: rotateY(-360deg);
+		}
+	}
+	
+	@keyframes loading_bar_fullWidth{
+		from{width: 1px;}
+		to{width: 100%;}
+	}
+	
+	
+	
+/*	navbar*/
+	.header{
+		position: fixed;
+		width: 100%;
+		z-index: 5;
+	}
+	.header .navbar .container{
+		width: 800px;
+	}	
+	.header .navbar-light{
+		background-color: rgba(255,255,255,0.00) !important;
+	}
+	.header .navbar .navbar-brand{
+		font-weight: bold;
+	}
+	.navbar-nav .nav-item .nav-link{
+		color: rgba(21,21,21,1.00);
+		font-size: 13px;
+	}
+	
+	
+	
+	
+	
+/*	slides*/
+	
+	
+	
+/*	first slide*/
+	
+	
+	.first_slide{
+		background-image: url(img/glasses.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.slides_container .container .slider_container{
+		overflow: hidden;
+		position: relative;
+		height: inherit;
+	}
+	.slides_container .container .slides_wrapper{
+		height: 400px;
+		position: relative;
+	}
+	.slides_container .container .slides{
+		width: 400px;
+		height: 100px;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		
+	}
+	.slides h1{
+		text-transform: uppercase;
+	}
+	
+	/*second slide*/
+	.second_slide{
+		background-color: rgba(228,228,228,1.00);
+		background-image: url(img/laptop.jpg);
+		background-position: left;
+		background-size: 50% 100%;
+		background-repeat: no-repeat;
+		text-align: right;
+	}
+	.second_slide .second_slide_text{
+		width: 300px;
+		float: right;
+		position: relative;
+		height: inherit;
+	}
+	.second_slide .second_slide_text p{
+		margin-top: 40px;
+	}
+	
+	
+	
+	/*Button*/
+	.second_slide .second_slide_text .slides_vertically_centered > div{
+		padding: 4px 0 4px 40px;
+		border: 1px solid;
+		float: right;
+		margin-top: 40px;
+		border-radius: 3px;
+		font-size: 13px;
+		cursor: pointer;
+	}
+	.second_slide .second_slide_text .slides_vertically_centered > div div{
+		float: right;
+		width: 40px;
+		padding-right: 6px;
+	}
+	.second_slide .second_slide_text .slides_vertically_centered > div:hover{
+		border-color: rgba(136,136,136,0.00);
+	}
+	
+	/*third slide*/
+	
+	.third_slide{
+		background-color: rgba(26,31,37,1.00);
+		color: rgba(235, 240, 244, 1.00);
+		text-align: center;
+	}
+	.third_slide .container .third_slide_content{
+		height: 500px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.third_slide .container .third_slide_content .icons_border{
+		border: 1px solid rgba(55,57,71,1.00);
+		height: inherit;
+		overflow: hidden;
+	}
+	
+	
+	/*animated icon covers*/
+	.third_slide .container .third_slide_content .icons_border .icon_cover_wrapper{
+		position: relative;
+	}
+	
+	
+	
+	
+	/*borders over the icons*/
+	.third_slide .container .third_slide_content .row:first-of-type{
+		border-top: none;
+		margin-top: 20px;
+	}
+	
+	.third_slide .container .third_slide_content .icons_border .icons_wrapper{
+		height: 130px;
+		position: relative;
+	}
+	.third_slide .container .third_slide_content .icons_border .icons_wrapper .inner_icons_wrapper{
+		position: absolute;
+		top:0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		height: 50%;
+	}
+	.inner_icons_wrapper i{
+		font-size: 30px;
+	}
+	.inner_icons_wrapper span{
+		display: block;
+		font-size: 12px;
+	}
+	
+	
+	
+	/*frouth slide*/
+	.fourth_slide{
+		background-image: url(img/lights.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	.fourth_slide .container .fourth_slide_content{
+		width: 100%;
+		height: 55%;
+		position: absolute;
+		bottom: 0;
+	}
+	.fourth_slide .container .fourth_slide_content .left_side .button{
+		float: left;
+	}
+	.fourth_slide .fourth_slide_content .right_side{
+		width: 330px;
+		height: 340px;
+		position: relative;
+		float: right;
+	}
+	.fourth_slide .fourth_slide_content .right_side .right_side_wrapper{
+		position: relative;
+		overflow: hidden;
+		width: 330px;
+		height: 320px;
+	}
+	.fourth_slide .fourth_slide_content .right_side .mobile_slides{
+		height: 300px;
+		width: 330px;
+		position: absolute;
+		background-size: 100% 100%;
+		top: 0;
+		left: 0;
+	}
+	.fourth_slide .fourth_slide_content .right_side #mob_slide_0{
+		
+		background-image: url(img/mobile1.png);
+	}
+	.fourth_slide .fourth_slide_content .right_side #mob_slide_1{
+		background-image: url(img/mobile2.png);
+	}
+	.fourth_slide .fourth_slide_content .right_side #mob_slide_2{
+		background-image: url(img/mobile3.png);
+	}
+	.fourth_slide .fourth_slide_content .right_side #mob_slide_3{
+		background-image: url(img/mobile4.png);
+	}
+	.fourth_slide .fourth_slide_content .right_side .mobile_indicators{
+		height: 19px;
+		width: 100px;
+		line-height: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.fourth_slide .fourth_slide_content .right_side #mob_ind_0{
+		background-color: rgba(105, 188, 218, 1.00);
+	}
+	.fourth_slide .fourth_slide_content .right_side .mobile_indicators .mob_ind{
+		height: 3px;
+		width: 22%;
+		background-color: rgba(86,93,103,1.00);
+		float: left;
+		margin-left: 1.5%;
+		cursor: pointer;
+	}
+	
+	
+	
+/*	fifth slide*/
+	.fifth_slide{
+		background-color: rgba(2,2,1,1.00);
+		background-image: url(img/finance-tower.jpg);
+		background-position: left;
+		background-size: 50% 100%;
+		background-repeat: no-repeat;
+		color: rgba(250,254,255,1.00);
+	}
+	.fifth_slide .fifth_slide_content button{
+		background-color: rgba(0,0,0,0.00);
+		color: rgba(250,254,255,1.00);
+	}
+	/*edit*/
+	.fifth_slide .fifth_slide_content .left_side .left_side_txtbox .left_side_controls{
+		border: none;
+		background-color: rgba(199,199,199,0.00);
+		width: 100%;
+		color: rgba(17,143,255,1.00);
+	}
+	
+	.fifth_slide .fifth_slide_content .left_side .left_side_txtbox{
+		border-bottom: 1px solid rgba(217,237,241,1.00);
+	}
+	.fifth_slide .fifth_slide_content .right_side h3{
+		text-align: right;
+	}
+	.fifth_slide .fifth_slide_content .right_side .prices_container{
+		
+	}
+	.fifth_slide .fifth_slide_content .right_side .prices_box{
+		float: left;
+		width: 32%;
+		margin-left: 3px;
+		position: relative;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_circle{
+		width: 35%;
+		height: 25px;
+		background-color: rgba(2,2,1,1.00);
+		border-bottom: thin solid rgba(55, 70, 75, 1.00);
+		border-radius: 50%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -6%;
+		margin: 0 auto;
+		z-index: 1;
+	}
+	
+	.fifth_slide .fifth_slide_content .right_side .price_products_wrapper{
+		position: relative;
+		border: thin solid rgba(55, 70, 75, 1.00);
+		height: 220px;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products{
+		position: absolute;
+		top:0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		width: 80%;
+		height: 80%;
+	}
+	
+	.fifth_slide .fifth_slide_content .right_side .price_products h6{
+		font-size: 12px;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products p{
+		font-size: 9px;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products .price_currency{
+		width: 70%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0 auto;
+		height: 20%;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products #wider_price_currency{
+		width: 80%;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products .price_num{
+		float: left;
+		font-size: 20px;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products .currency_symbol{
+		float: right;
+		font-size: 10px;
+	}
+	.fifth_slide .fifth_slide_content .right_side .price_products .currency_symbol .line{
+		height: 1px;
+		background-color: rgba(250,254,255,1.00);
+	}
+	
+	.price_products_wrapper_colorJS{
+		background:linear-gradient(to top right,  rgba(0 , 66 , 124 , 1.00) ,  rgba(174,215,229,1.00));
+	}
+	
+	
+	
+/*	sixth slide*/
+	.sixth_slide{
+		background-color: rgba(23, 24, 28, 1.00);
+		color: rgba(250,254,255,1.00);
+	}
+	.sixth_slide .container .sixth_slide_content{
+		
+	}
+	
+	
+	
+	
+	
+/*	.sixth_slide .container .sixth_slide_content .sixth_slide_info .contacts_icon*/
+	
+	.sixth_slide_info > h6{
+		font-size: 14px;
+	}
+	.sixth_slide_info > p{
+		color: rgba(162,162,162,1.00);
+	}
+	.contacts_icon{
+		margin-top: 10px;
+	}
+	.contacts_icon > i{
+		color: rgba(162,162,162,1.00);
+		font-size: 20px;
+	}
+	.contacts_icon > span{
+		font-size: 10px;
+		color: rgba(162,162,162,1.00);
+	}
+	
+	
+	.sixth_slide .container .sixth_slide_content .breakLINE{
+		height: 60px;
+	}
+	.sixth_slide .container .sixth_slide_content .separator{
+		height: 1px;
+		background-color: rgba(89,89,89,1.00);
+		margin-bottom: 20px;
+	}
+	.sixth_slide .container .sixth_slide_content .footer_brandName{
+		font-size: 1.25rem;
+		color: rgba(255,255,255,1.00);
+		font-weight: bold;
+		text-decoration: none;
+	}
+	.sixth_slide .container .sixth_slide_content .social_media_icons{
+		text-align: right;
+	}
+	.sixth_slide .container .sixth_slide_content .social_media_icons a{
+		text-decoration: none;
+		color: rgba(162,162,162,1.00);
+		font-size: 20px;
+		margin-left: 5px;
+	}
+	
+	
+	
+	
+/*	hidden menu*/
+	.hidden_menu{
+		position: fixed;
+		top:0;
+		right: -50%;
+		width: 50%;
+		background-color: rgba(25,26,30,0.85);
+		z-index: 6;
+		height: 100vh;
+	}
+	.hidden_menu .hidden_menu_header_wrapper{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header{
+		height: 50px;
+		line-height: 52px;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation{
+		width: 70%;
+		float: left;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation span{
+		margin-left: 3%;
+		font-size: 13px;
+		color: rgba(162,162,162,1.00);
+		cursor: pointer;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation span:first-of-type{
+		margin-left: 0;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .right_exit_icon{
+		float: right;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .right_exit_icon i{
+		color: rgba(162,162,162,1.00);
+		cursor: pointer;
+		font-weight: lighter;
+		font-size: 17px;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .right_exit_icon i:hover , .hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation span:hover{
+		color: rgba(250,254,255,1.00);
+		text-decoration: underline;
+	}
+	
+	.hidden_menu .hidden_menu_content .hidden_menu_content_wrapper{
+		width: 90%;
+	}
+	.hidden_menu .hidden_menu_content .hidden_menu_content_wrapper .hidden_menu_dynamic_content{
+		width: 50%;
+	}
+	.hidden_menu .hidden_menu_content .hidden_menu_content_wrapper .hidden_menu_dynamic_content h6{
+		color: rgba(250,254,255,1.00);
+	}
+	.hidden_menu .hidden_menu_footer{
+		position: absolute;
+		bottom: 0;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_button{
+		border: 1px solid;
+		color: rgba(250,254,255,1.00);
+		font-size: 11px;
+		text-align: center;
+		border-radius: 3px;
+		padding: 5px 10px;
+		cursor: pointer;
+		width: 114px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_button:hover{
+		border-color: rgba(183,183,183,0.00);
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_social_media{
+		margin-top: 40px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_social_media a{
+		text-decoration: none;
+		color: rgba(162,162,162,1.00);
+		font-size: 20px;
+		margin-left: 5px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_social_media a:first-of-type{
+		margin-left: 0; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	indicators*/
+	.indicators_container{
+		position: fixed;
+		right: 5px;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		width: 15px;
+		height: 75px;
+	}
+	.indicators_container div{
+		width: 8px;
+		height: 8px;
+		border: 1px solid rgba(57, 56, 70, 1.00);
+		border-radius: 50%;
+		margin-top: 7px;
+		cursor: pointer;
+		background-color: rgba(57, 56, 70, 1.00);
+	}
+	.indicators_container div:first-of-type{
+		background-color: rgba(57, 56, 70, 0.00);
+	}
+	
+	
+	
+	/*classes for all slides*/
+	.slides_container{
+		height: 100vh;
+		overflow: hidden;
+	}
+	
+	.slides_container .container{
+		height: inherit;
+		width: 800px;
+		position: relative;
+	}
+	.slides_vertically_centered{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		height: 65%;
+	}
+	
+	/*button*/
+	.button{
+		border: 1px solid;
+		font-size: 11px;
+		text-align: center;
+		border-radius: 3px;
+		padding: 4px 0 4px 10px;
+		cursor: pointer;
+		width: 114px;
+		margin: 2% auto 0;
+	}
+	.button span{
+		display: inline;
+	}
+	.button div{
+		float: right;
+		width: 10%;
+		margin-right: 2px;
+	}
+	
+/*	paragraph font size 12px*/
+	.p_font_size_12{
+		font-size: 12px;
+	}
+/*	color when hovering*/
+	.color_hover:hover{
+		background: linear-gradient(to top right,  rgba(0 , 66 , 124 , 1.00) ,  rgba(174,215,229,1.00));
+		border-color: rgba(183,183,183,0.00);
+	}
+	
+	
+	
+	
+	/*Media*/
+	
+	/*992px*/
+	@media (max-width:992px){
+
+/*		second slide*/
+		.second_slide .second_slide_text p{
+			margin-top: 20px;
+		}
+		
+/*		button*/
+		.second_slide .second_slide_text .slides_vertically_centered > div{
+		padding: 2px 0 2px 25px;
+		border: 1px solid;
+		float: right;
+		margin-top: 40px;
+		border-radius: 3px;
+		font-size: 10px;
+		cursor: pointer;
+	}
+	.second_slide .second_slide_text .slides_vertically_centered > div div{
+		float: right;
+		width: 25px;
+		padding-right: 6px;
+	}
+		
+		
+		
+/*		third slide*/
+		.third_slide .container .col-3 {
+			max-width: 24%;
+		}
+		.third_slide .container .col-12{
+			max-width: 96%;
+		}
+		.third_slide .container .third_slide_content{
+			height: 400px;
+		}
+		.third_slide .container .third_slide_content .icons_border .icons_wrapper{
+			height: 85px;
+		}
+		
+		.inner_icons_wrapper i{
+			font-size: 28px;
+		}
+		.inner_icons_wrapper span{
+			font-size: 10px;
+		}
+		
+		
+		
+		
+		
+/*		fourth slide*/
+		
+		.fourth_slide .fourth_slide_content .right_side{
+		width: 260px;
+		height: 290px;
+		position: relative;
+		float: right;
+	}
+	.fourth_slide .fourth_slide_content .right_side .right_side_wrapper{
+		position: relative;
+		overflow: hidden;
+		width: 260px;
+		height: 250px;
+	}
+	.fourth_slide .fourth_slide_content .right_side .mobile_slides{
+		height: 250px;
+		width: 260px;
+		position: absolute;
+		background-image: url(img/mobile.png);
+		background-size: 100% 100%;
+		top: 0;
+		left: 0;
+	}
+	
+	.fourth_slide .fourth_slide_content .right_side .mobile_indicators{
+		height: 10px;
+		width: 80px;
+		line-height: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+		
+		
+		
+/*		fifth slide*/
+		
+		.fifth_slide .fifth_slide_content .left_side .left_side_txtbox .left_side_controls{
+		border: none;
+		background-color: rgba(199,199,199,0.00);
+		width: 100%;
+		height: 30px;
+		}
+		.fifth_slide .fifth_slide_content button{
+			width: 100%;
+			height: 30px;
+		}
+		.fifth_slide .fifth_slide_content .right_side .prices_container .prices_box .price_products .price_num{
+			font-size: 17px;
+		}
+		
+		/*		tags and public classes*/
+		h1{
+			font-size:  30px;
+		}
+		p{
+			font-size: 12px;
+		}
+		.container{
+			max-width: 650px;
+		}
+		.p_font_size_12{
+			font-size: 10px;
+		}
+		.button{
+		border: 1px solid;
+		font-size: 10px;
+		text-align: center;
+		border-radius: 3px;
+		padding: 2px 0 2px 6px;
+		cursor: pointer;
+		width: 100px;
+		margin: 2% auto 0;
+		}
+		.button span{
+			display: inline;
+		}
+		.button div{
+			float: right;
+			width: 10%;
+			margin-right: 2px;
+		}
+	}
+	
+	
+	
+	
+	/*768px*/
+	@media (max-width:768px){
+/*		tags*/
+		h1{
+			font-size: 25px;
+		}
+		.third_slide .container .third_slide_content{
+			height: 300px;
+		}
+		.third_slide .container .third_slide_content .icons_border .icons_wrapper{
+			height: 65px;
+		}
+		.third_slide .container .third_slide_content .icons_border .icons_wrapper .inner_icons_wrapper{
+			height: 80%;
+		}
+		.inner_icons_wrapper i{
+			font-size: 26px;
+		}
+		
+		
+/*		header */
+		
+		.header a{
+			color: rgba(235, 240, 244, 1.00)!important;
+		}
+		.header .navbar-toggler{
+			border-color: rgba(235, 240, 244, 1.00);
+		}
+		
+		.header .navbar-toggler .navbar-toggler-icon {
+ 		 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(235, 240, 244, 1.00)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+		}
+		
+		/*indicators*/
+		#indicator_2{
+			background-color: rgba(57, 56, 70, 0.00);
+		}
+		
+		
+		
+/*		fifth slide*/
+		
+		.fifth_slide{
+		background-image: url(img/finance-tower.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		color: rgba(250,254,255,1.00);
+	}
+	.fifth_slide .fifth_slide_content button{
+		background-color: rgba(0,0,0,0.00);
+		color: rgba(250,254,255,1.00);
+	}
+	.fifth_slide .fifth_slide_content .left_side .left_side_txtbox .left_side_controls{
+		border: none;
+		background-color: rgba(199,199,199,0.00);
+		width: 100%;
+	}
+	
+	.fifth_slide .fifth_slide_content .left_side .left_side_txtbox{
+		border-bottom: 1px solid rgba(217,237,241,1.00);
+	}
+	.fifth_slide .fifth_slide_content .left_side h3{
+		font-size: 20px;
+	}
+		
+		
+		
+		
+		
+/*		hidden menu*/
+	.hidden_menu{
+		right: -100%;
+		width: 100%;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header{
+		height: 50px;
+		line-height: 52px;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation{
+		width: 70%;
+		float: left;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .left_navigation span{
+		margin-left: 5%;
+		font-size: 10px;
+	}
+	.hidden_menu .hidden_menu_header_wrapper .hidden_menu_header .right_exit_icon i{
+		font-size: 14px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_button{
+		font-size: 10px;
+		padding: 2px 8px;
+		width: 100px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_social_media{
+		margin-top: 10px;
+	}
+	.hidden_menu .hidden_menu_footer .hidden_menu_social_media a{
+		font-size: 15px;
+		margin-left: 7px;
+	}
+	
+		
+		
+		
+		
+		
+		
+/*	public tags and classes	*/
+		.container{
+			max-width: 500px;
+		}
+		
+		
+	}
+	 
+	
+/*	576px*/
+	@media (max-width:576px){
+		
+/*		header*/
+		
+		.header .navbar-brand{
+			font-size: 18px;
+		}
+		.header .navbar-toggler{
+			height: 28px;
+			width: 37px;
+			font-size: 16px;
+		}
+		.header .navbar-toggler .navbar-toggler-icon{
+			margin-left: -6px;
+			margin-top: -3px;
+		}
+		
+		
+		
+		
+/*		fifth slide*/
+		.fifth_slide .fifth_slide_content .left_side h3{
+		font-size: 16px;
+	}
+		
+/*		public tags and classes*/
+		
+		.container{
+			max-width: 75%;
+		}
+		
+		
+		
+		.slides_container:first-of-type{
+			background-image: url(img/glasses.jpg);
+		}
+		
+	}
+</style>
+</head>
+
+<body>
+
+
+
+<!--loader-->
+
+	
+<div class="loader_background">
+	<div class="loader">
+		<div class="box_wrapper">
+			<div class="box">
+				<h4>Brand Name</h4>
+				<div class="front sides"></div>
+				<div class="back sides"></div>
+				<div class="top sides"></div>
+				<div class="bottom sides"></div>
+				<div class="left sides"></div>
+				<div class="right sides"></div>
+			</div>
+			<div class="loading_bar"></div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="content">
+
+<!--Header -->
+	<div class="header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				  <a class="navbar-brand my_color" href="#">Brand Name</a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+					<ul class="navbar-nav justify-content-end">
+					  <li class="nav-item">
+						<a class="nav-link" id="nav_link_0" href="#">About</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" id="nav_link_1" href="#">Cases</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" id="nav_link_2" href="#">Services</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" id="nav_link_3" href="#">Contacts</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			</nav>
+	</div>
+
+
+
+<!-- first slide-->
+	<div class="slides_container first_slide d-none d-md-block light_style" id="slide_0">
+		<div class="container">
+			<div class="slider_container">
+				<div class="slides_wrapper">
+					<div class="slides">
+						<h1>Web Applications</h1>
+						<p>from an experienced team</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+<!-- indicators	-->
+	<div class="indicators_container">
+		<div class="slide_indicators d-none d-md-block" id="indicator_0"></div>
+		<div class="slide_indicators d-none d-md-block" id="indicator_1"></div>
+		<div class="slide_indicators d-none d-sm-block" id="indicator_2"></div>
+		<div class="slide_indicators d-none d-md-block" id="indicator_3"></div>
+		<div class="slide_indicators d-none d-sm-block" id="indicator_4"></div>
+		<div class="slide_indicators d-none d-md-block" id="indicator_5"></div>
+	</div>
+	
+	
+<!--  second slide	-->
+	
+	<div class="slides_container second_slide d-none d-md-block light_style" id="slide_1">
+		<div class="container">
+			<div class="second_slide_text">
+				<div class="slides_vertically_centered">
+					<h1>Who we are</h1>
+					<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum harum laboriosam quam tempora accusamus aliquid alias porro ipsum unde iure.</p>
+					<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum harum laboriosam quam tempora accusamus aliquid alias porro ipsum unde iure.</p>
+					<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum harum laboriosam quam tempora accusamus aliquid alias porro ipsum unde iure.</p>
+					<div class="color_hover">
+						<span>More about us</span>
+						<div>&gt;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Third Slide	-->
+	
+	<div class="slides_container third_slide d-none d-sm-block dark_style" id="slide_2">
+		<div class="container">
+			<div class="third_slide_content">
+				<h1>What we offer</h1>
+				<div class="row" id="icons_row_1"></div>
+				<div class="row" id="icons_row_2"></div>
+				<div class="row" id="icons_row_3"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+<!-- Fourth slide	-->
+	
+	<div class="slides_container fourth_slide d-none d-md-block dark_style" id="slide_3">
+		<div class="container">
+			<div class="fourth_slide_content">
+				<div class="row">
+					<div class="col-md">
+						<div class="left_side">
+							<h1>Cases. <br> How we do things</h1>
+							<p class="p_font_size_12">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum error cupiditate vero.
+							</p>
+							<div class="button color_hover">
+								<span>View all cases</span>
+								<div>&gt;</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="right_side">
+							<div class="right_side_wrapper">
+								<div class="mobile_slides" id="mob_slide_0"></div>
+								<div class="mobile_slides" id="mob_slide_1"></div>
+								<div class="mobile_slides" id="mob_slide_2"></div>
+								<div class="mobile_slides" id="mob_slide_3"></div>
+							</div>
+							<div class="mobile_indicators">
+								<div id="mob_ind_0" class="mob_ind"></div>
+								<div id="mob_ind_1" class="mob_ind"></div>
+								<div id="mob_ind_2" class="mob_ind"></div>
+								<div id="mob_ind_3" class="mob_ind"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+			
+<!--	fifth slide				-->
+	<div class="slides_container fifth_slide dark_style" id="slide_4">
+		<div class="container">
+			<div class="fifth_slide_content slides_vertically_centered">
+			<div class="row">
+				<div class="col col-md">
+				  <div class="left_side">
+						<h3>Tell us<br> about  your project</h3>
+						<form action="">
+							<p class="p_font_size_12">What is your name?</p>
+							<div class="left_side_txtbox">
+								<input type="text" class="left_side_controls">
+							</div>
+							
+							<p class="p_font_size_12">Your contacts</p>
+							<div class="left_side_txtbox">
+								<input type="text" class="left_side_controls">
+							</div>
+							<p class="p_font_size_12">Project description</p>
+							<div class="left_side_txtbox">
+								<textarea name="" id="" cols="30" rows="8" class="left_side_controls"></textarea>
+							</div>
+							<button class="button color_hover" type="submit">
+								<span>Send inquery</span>
+								<div>&gt;</div>
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="d-none d-md-block col-md">
+					<div class="right_side">
+						<h3>Pricing</h3>
+						<div class="prices_container">
+								<div class="prices_box">
+									<div class="price_circle"></div>
+									<div class="price_products_wrapper color_hover">
+										<div class="price_products">
+											<h6>Just resources</h6>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+											<div class="price_currency">
+												<div class="price_num">30</div>
+												<div class="currency_symbol">
+													USD
+														<div class="line"></div>
+													hour
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="prices_box">
+									<div class="price_circle"></div>
+									<div class="price_products_wrapper color_hover">
+										<div class="price_products">
+											<h6>IT-consulting</h6>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+											<div class="price_currency">
+												<div class="price_num">50</div>
+												<div class="currency_symbol">
+													USD
+														<div class="line"></div>
+													hour
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="prices_box">
+									<div class="price_circle"></div>
+									<div class="price_products_wrapper color_hover">
+										<div class="price_products">
+											<h6>Dedicated team</h6>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+											<div class="price_currency" id="wider_price_currency">
+												<div class="price_num">3000</div>
+												<div class="currency_symbol">
+													USD
+														<div class="line"></div>
+													hour
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>		
+	
+	
+<!--		sixth slide	-->
+			
+	<div class="slides_container sixth_slide d-none d-md-block dark_style" id="slide_5">
+		<div class="container">
+			<div class="sixth_slide_content slides_vertically_centered">
+				<div class="row">
+					<div class="col-md footer_content" id="footer_content_0">
+						<div class="sixth_slide_info">
+							<h6>About</h6>
+							<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, reiciendis quod voluptatem.</p>
+							<p class="p_font_size_12">Team</p>
+							<p class="p_font_size_12">Career</p>
+						</div>
+					</div>
+					<div class="col-md footer_content" id="footer_content_1">
+						<div class="sixth_slide_info">
+							<h6>Cases</h6>
+							<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, reiciendis quod voluptatem.</p>
+							<p class="p_font_size_12">Team</p>
+							<p class="p_font_size_12">Career</p>
+						</div>
+					</div>
+					<div class="col-md footer_content" id="footer_content_2">
+						<div class="sixth_slide_info">
+							<h6>Services</h6>
+							<p class="p_font_size_12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, reiciendis quod voluptatem.</p>
+							<p class="p_font_size_12">Team</p>
+							<p class="p_font_size_12">Career</p>
+						</div>
+					</div>
+					<div class="col-md footer_content" id="footer_content_3">
+						<div class="sixth_slide_info">
+							<h6>Contacts</h6>
+							<div class="contacts_icon">
+								<i class="fa fa-phone"></i>
+								<span>phone number</span>
+							</div>
+							<div class="contacts_icon">
+								<i class="fa fa-map-marker"></i>
+								<span>Address</span>
+							</div>
+							<div class="contacts_icon">
+								<i class="fa fa-envelope"></i>
+								<span>EmailAddress@something.com</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="breakLINE"></div>
+					</div>
+				</div>
+					
+				<div class="row">
+					<div class="col-md-12">
+						<div class="separator"></div>
+					</div>
+					<div class="col-md-3">
+						<a href="" class="footer_brandName">BrandName</a>
+					</div>
+					<div class="col-md-3 offset-md-6">
+						<div class="social_media_icons">
+							<a href=""><i class="fa fa-youtube-square"></i></a>
+							<a href=""><i class="fa fa-facebook-square"></i></a>
+							<a href=""><i class="fa fa-google-plus-square"></i></a>
+							<a href=""><i class="fa fa-instagram"></i></a>
+							<a href=""><i class="fa fa-twitter-square"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+			
+<!--		hidden side menu	-->
+	<div class="hidden_menu">
+		<div class="hidden_menu_header_wrapper">
+			<div class="hidden_menu_header">
+				<div class="left_navigation">
+					<span class="hidden_menu_nav" id="hidden_menu_0">About</span>
+					<span class="hidden_menu_nav" id="hidden_menu_1">Cases</span>
+					<span class="hidden_menu_nav" id="hidden_menu_2">Services</span>
+					<span class="hidden_menu_nav" id="hidden_menu_3">Contacts</span>
+				</div>
+				<div class="right_exit_icon">
+					<i class="fa fa-close" id="hidden_menu_close_btn"></i>
+				</div>
+			</div>
+		</div>
+		<div class="hidden_menu_content">
+			<div class="hidden_menu_content_wrapper slides_vertically_centered">
+				<div class="hidden_menu_dynamic_content">
+					
+				</div>
+				<div class="hidden_menu_footer">
+					<div class="hidden_menu_button color_hover">
+						Send inquery
+					</div>
+					<div class="hidden_menu_social_media">
+						<a href=""><i class="fa fa-youtube-square"></i></a>
+						<a href=""><i class="fa fa-facebook-square"></i></a>
+						<a href=""><i class="fa fa-google-plus-square"></i></a>
+						<a href=""><i class="fa fa-instagram"></i></a>
+						<a href=""><i class="fa fa-twitter-square"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<script src="JS/jquery-3.3.1.min.js"></script>
+	<script src="Bootstrap 4/js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			"use strict";
+			
+			
+			//loader (hiding loader and displaying the content)
+			setTimeout(hiding_loader_displaying_content, 7000);
+			
+			function hiding_loader_displaying_content(){
+				$(".loader_background").css({
+					display: "none"
+				});
+				$(".content").animate({
+					opacity: "1"
+				}, 2000);
+				
+			}
+			
+			/*setting the height of all slides*/
+		 	var height= window.innerHeight;
+			$(".slides_container").css("height" , height+"px");
+			
+			
+			
+			//scrolling the website when clicking the indicators
+			
+			var indicators_array = document.getElementsByClassName("slide_indicators");
+			var slides_container_array = document.getElementsByClassName("slides_container");
+			for(var i = 0; i<indicators_array.length; i++){
+				indicators_array[i].onclick = moving_slide_scrollingDown;
+			}
+			
+			//scrolling function
+			function moving_slide_scrollingDown(){
+				$(".slide_indicators").css("background-color" , "rgba(57, 56, 70, 1.00)");
+				var indicator_ID = this.getAttribute("id");
+				var slide_offset_top = 0;
+				for(var i = 0; i<indicators_array.length; i++){
+					if(indicator_ID == indicators_array[i].getAttribute("id")){
+						slide_offset_top = document.getElementById("slide_"+i).offsetTop;
+						break;
+					}
+				}
+				$("body , html").animate({
+					scrollTop: slide_offset_top
+				},500)
+				
+				//changing indicators colors function
+				$("#"+indicator_ID).css("background-color" , "rgba(57, 56, 70, 0.00)");
+			}
+			
+			//coloring the first indicator according to the width of body
+			
+				
+			
+			
+			
+			
+			//third slide
+			//Declaring a function to create icons and buttons
+			
+				var icons_shape_arr = ["fa-shopping-cart","fa-money","fa-plane","fa-archive","fa-cubes","fa-flask","fa-mobile","fa-clock-o","fa-line-chart","fa-play-circle","fa-shield","fa-search"];
+
+					var icons_name_arr = ["Market places","Payment system","Travel websites &amp; applications","CRM / ERP systems","Trainning websites MODC","Science applications","Mobile apps","Highload systems","User activity analysis","Media servers","Partner programs","Full-text search"];
+			
+			
+			function AddingIcons_Buttons(){
+					
+					$("#icons_row_1 , #icons_row_2 , #icons_row_3").html("");
+					if($("#icons_row_2 , #icons_row_3").length < 1){
+						$("#icons_row_1").after("<div class='row' id='icons_row_2'></div><div class='row' id='icons_row_3'></div>");
+					}
+					
+					//larg or extra larg screens
+					var icons_count = 0;
+					if(window.innerWidth >= 992){
+						for(var i = 0;i <15; i++){
+							if(i<5){
+
+								adding_oneICON("icons_row_1", icons_shape_arr[icons_count], icons_name_arr[icons_count]);
+							}
+							else if(i>=5 && i<10){
+								adding_oneICON("icons_row_2", icons_shape_arr[icons_count], icons_name_arr[icons_count]);
+							}
+							else{
+								if(i == 10 || i == 12 || i == 14){
+									icons_count--;
+
+									if(i==12){
+										//adding the button
+										$("#icons_row_3").append(
+										"<div class='icons_border col-3 col-lg'> <div class='icons_wrapper'><div class='inner_icons_wrapper'><div class='button color_hover'><span>Read more</span><div>&gt;</div></div> </div></div></div>")
+									}
+									else{
+										adding_oneICON("icons_row_3", "", "");
+									}
+									if(i == 14){
+										RunFunctionOneTime = false;
+									}
+								}
+								else{
+									adding_oneICON("icons_row_3", icons_shape_arr[icons_count], icons_name_arr[icons_count]);
+								}
+
+							}
+							icons_count++;
+						}
+					}
+					else{
+						$("#icons_row_3 , #icons_row_2").remove();
+
+						for(var i =0; i<12; i++){
+							adding_oneICON("icons_row_1", icons_shape_arr[i], icons_name_arr[i]);
+							if(i == 11){
+								RunFunctionOneTime = false;
+							}
+						}
+
+						//Adding the button in a complete row
+						$("#icons_row_1").append(
+										"<div class='icons_border col-12 col-lg'> <div class='icons_wrapper'><div class='inner_icons_wrapper'><div class='button color_hover'><span>Read more</span><div>&gt;</div></div> </div></div></div>");
+					}
+
+			}
+			
+			
+			
+			//Declaring a function to set icons in their places
+			var icons_cover_position_arrary = ["top" , "right" , "bottom" , "left" ,"top" , "right" , "bottom" , "left" , "top" , "right"];
+			
+			
+			var icon_cover_firstSavedPosition = [];
+			var icon_cover_savedID = [];
+			
+			
+			var icon_cover_ID = 0;
+			var icons_cover_arrary = document.getElementsByClassName("icon_cover_wrapper");
+			
+			var RunFunctionOneTime = true;
+			
+			
+			function adding_oneICON(Parent_rowID, icons_shape, icons_name){
+				var ID ="#"+ Parent_rowID;
+				if(icon_cover_ID > icons_cover_arrary.length){
+					icon_cover_ID = 0;
+				}
+				$(ID).append("<div class='icons_border col-3 col-lg'> <div class='icon_cover_wrapper' id='icon_cover_"+icon_cover_ID+"'> <div class='icons_wrapper'>"+
+								"<div class='inner_icons_wrapper'> <i class='fa "+icons_shape+"' aria-hidden='true'></i><span>"+icons_name+"</span></div></div></div></div>");
+				
+				//changing the icon cover's style
+				var random_number =Math.floor(Math.random()*10);
+				if(RunFunctionOneTime){
+					switch(icons_cover_position_arrary[random_number]){
+						case "top":
+							$("#icon_cover_"+icon_cover_ID).css({
+								top : "-100%",
+								left: "0"
+							});
+							icon_cover_firstSavedPosition[icon_cover_ID]= "top";
+
+							break;
+						case "right":
+							$("#icon_cover_"+icon_cover_ID).css({
+								left : "115%",
+								top: "0"
+							});
+							icon_cover_firstSavedPosition[icon_cover_ID]= "right";
+							break;
+						case "bottom":
+							$("#icon_cover_"+icon_cover_ID).css({
+								top: "100%",
+								left : "0"
+							});
+							icon_cover_firstSavedPosition[icon_cover_ID]= "bottom";
+							break;
+						default:
+							$("#icon_cover_"+icon_cover_ID).css({
+								left : "-115%",
+								top: "0"
+							});
+							icon_cover_firstSavedPosition[icon_cover_ID]= "left";
+							break;
+					}
+				}
+					
+				icon_cover_savedID[icon_cover_ID] = "icon_cover_"+icon_cover_ID;
+				icon_cover_ID++;
+				
+			}
+			
+			//animating icons in the third slide when clicking one time on the third indicator
+			
+			//when clicking on the third indicator call third_slide_animate_iconCovers function
+			var scroll_top = 0;
+			var windowWidth = window.innerWidth;
+			var slides_height = document.getElementsByClassName("slides_container")[0].offsetHeight;
+			var IsFirstTime_scrollThirdSlide = true;
+			$(window).scroll(function(){
+				slides_height = document.getElementsByClassName("slides_container")[0].offsetHeight;
+				scroll_top = $("html").scrollTop();
+				
+				
+				//fifth slide coloring the price products wrapper
+				if(windowWidth >= 769 && scroll_top >= (slides_height*4) && oneTimeFunctionCalled){
+					price_products_IntervalID = setInterval(price_products_backColor, 200);
+				}
+				
+				
+				//change the navbar color
+				Change_Navbar_color(scroll_top, slides_height);
+				 
+				if(scroll_top >= (slides_height*2) && windowWidth >= 768 && IsFirstTime_scrollThirdSlide){
+					third_slide_animate_iconCovers();
+					IsFirstTime_scrollThirdSlide = false;
+				};
+			});
+			
+			if(windowWidth<768 && windowWidth >= 576){
+				third_slide_animate_iconCovers();
+				IsFirstTime_scrollThirdSlide = false;
+			}
+			
+			
+			var animate_iconCovers_intervalID;
+			
+			
+			function third_slide_animate_iconCovers(){
+				animate_iconCovers_intervalID= setInterval(animate_iconCovers, 100);
+			}
+			
+			
+			
+			//changing the color of nav bar
+			Change_Navbar_color(scroll_top, slides_height);
+			function Change_Navbar_color(scrollTop, slideHeight){
+				var IDNum = Math.floor(scrollTop / slideHeight);
+				var slideid = "slide_"+IDNum;
+					if($("#"+slideid).hasClass("light_style")){
+						$(".header .navbar-light").css("cssText", "background-color : rgba(255,255,255,0.00) !important");
+						$(".header .navbar .navbar-brand").css("cssText", "color:rgba(21,21,21,1.00) !important")
+						$(".navbar-nav .nav-item .nav-link").css("cssText", "color:rgba(21,21,21,1.00) !important");
+
+						$(".header .navbar-toggler").css("cssText", "border-color: rgba(0, 0, 0, 0.1)");
+
+						$(".header .navbar-toggler .navbar-toggler-icon").css("cssText", "background-image: url("+'"'+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"+'"'+")");
+					}
+					else{
+						$(".header .navbar-light").css("cssText", "background-color:rgba(23,23,23,1.00) !important");
+						$(".header .navbar .navbar-brand").css("cssText", "color:rgba(235, 240, 244, 1.00) !important")
+						$(".navbar-nav .nav-item .nav-link").css("cssText", "color:rgba(235, 240, 244, 1.00) !important");
+
+						$(".header .navbar-toggler").css("cssText", "border-color: rgba(235, 240, 244, 1.00)");
+						$(".header .navbar-toggler .navbar-toggler-icon").css("cssText", "background-image: url("+'"'+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(235, 240, 244, 1.00)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"+'"'+")");
+					}
+				
+			}
+			
+			//animate icon covers
+			var icon_cover_saved_counter = 0;
+			var chosenArray_counter = 0;
+			var chosenArray_numbers = [1];
+			var DuplicationChecker = false;
+			
+//			var animate_iconCovers_intervalID= setInterval(animate_iconCovers, 100);
+			function animate_iconCovers(){
+				var randon_animationDuration = Math.floor(Math.random()*10000);
+				for(var i = 0; i<chosenArray_numbers.length; i++){
+					if(chosenArray_numbers[i]==icon_cover_saved_counter){
+						DuplicationChecker = true;
+						break;
+					}
+				}
+				if(!DuplicationChecker){
+					chosenArray_numbers[chosenArray_counter] = icon_cover_saved_counter;
+					switch (icon_cover_firstSavedPosition[icon_cover_saved_counter]){
+						case "top":
+						case "bottom":
+							$("#"+icon_cover_savedID[icon_cover_saved_counter]).animate({
+								top: 0
+							}, randon_animationDuration)
+							break;
+						case "left":	
+						case "right":
+							$("#"+icon_cover_savedID[icon_cover_saved_counter]).animate({
+								left: 0
+							}, randon_animationDuration)
+							break;
+						default:
+							break;
+					}
+
+					chosenArray_counter++;
+				}
+				DuplicationChecker = false;
+				icon_cover_saved_counter += Math.floor(Math.random()*10);
+				if(icon_cover_saved_counter >= icon_cover_savedID.length){
+					icon_cover_saved_counter = Math.floor(Math.random()*10);
+					//terminate the interval if every icon cover is shown
+						if(chosenArray_numbers.length == icon_cover_savedID.length){
+							console.log("done animating");
+							clearInterval(animate_iconCovers_intervalID);
+						}
+				}
+				console.log("chosenArray_numbers.length "+chosenArray_numbers.length+" icon_cover_savedID.length"+icon_cover_savedID.length)
+				
+			}
+			
+			//setting the icons in all screens using AddingIcons_Buttons() and adding_oneICON()
+			AddingIcons_Buttons();
+			
+			window.onresize = function(){
+				if(windowWidth < 768){
+					scroll_top = 0;
+				}
+				AddingIcons_Buttons();
+				
+				windowWidth = window.innerWidth;
+				
+				//changing the color of nav bar
+				Change_Navbar_color(scroll_top, slides_height);
+				
+				/*setting the height of all slides*/
+				var height= window.innerHeight;
+				$(".slides_container").css("height" , height);
+				
+				
+			}
+			
+			
+			
+			
+			//fourth slide
+			//mobile slider
+			
+			//setting the width to all mobile slides
+			
+			var slide_width = document.getElementsByClassName("right_side_wrapper")[0].clientWidth;
+			
+			var left_position_for_slides = 0;
+			
+			var mobile_slides_arr = document.getElementsByClassName("mobile_slides");
+			for(var i = 0; i<mobile_slides_arr.length; i++){
+				mobile_slides_arr[i].style.left = left_position_for_slides+"px";
+				left_position_for_slides += slide_width;
+			}
+			
+			
+			
+			var mobile_indicators_arrary = document.getElementsByClassName("mob_ind");
+			for(var i = 0; i<mobile_indicators_arrary.length; i++){
+				mobile_indicators_arrary[i].onclick = slider_movement;
+				
+			}
+			function slider_movement(){
+				var indicator_ID = $(this).attr("id");
+				var slide_index =0;
+				for(var i = 0; i<mobile_indicators_arrary.length; i++){
+					if(indicator_ID == mobile_indicators_arrary[i].getAttribute("id")){
+						slide_index = i;
+						break;
+					}
+				}
+				$(".mob_ind").css("background-color","rgba(86,93,103,1.00)");
+				$("#"+indicator_ID).css("background-color","rgba(105, 188, 218, 1.00)");
+				var slide_leftposition = document.getElementsByClassName("mobile_slides")[slide_index].offsetLeft;
+				var specefic_movement = (slide_leftposition/slide_width)*slide_width;
+				
+					$(".right_side_wrapper").animate({
+						scrollLeft : specefic_movement
+					}, 500);
+			}
+			
+			
+			
+			//fifth slide
+			//right side color animation
+			var price_products_IntervalID
+			var price_products_counter = 0;
+			var reverse_move = false;
+			var oneTimeFunctionCalled = true;
+			var price_products_array = document.getElementsByClassName("price_products_wrapper");
+			
+			function price_products_backColor(){
+						
+					console.log(price_products_counter);
+					if(oneTimeFunctionCalled){
+						if(price_products_counter < price_products_array.length && !reverse_move){
+							price_products_array[price_products_counter].classList.add("price_products_wrapper_colorJS");
+							price_products_counter++;
+							if(price_products_counter == price_products_array.length){
+								reverse_move = true;
+								price_products_counter--;
+							}
+							
+						}
+						else{	price_products_array[price_products_counter].classList.remove("price_products_wrapper_colorJS");
+							if(price_products_counter == 0){
+								oneTimeFunctionCalled = false;
+								clearInterval(price_products_IntervalID);
+							}
+							price_products_counter--;
+						}
+					}
+						
+					
+			}
+			
+			//hidden menu functions
+			
+			
+			
+			//changing the content by clicking
+			var hidden_menu_nav_array = document.getElementsByClassName("hidden_menu_nav");
+			var nav_link_array = document.getElementsByClassName("nav-link");
+			$("#hidden_menu_0").css({
+					color: "rgba(250,254,255,1.00)",
+					textDecoration: "underline"
+				});
+			for(var i = 0; i<hidden_menu_nav_array.length; i++){
+				hidden_menu_nav_array[i].onclick = hidden_menu_click;
+				nav_link_array[i].onclick = open_hiddenMenu_changing_content;
+			}
+			function changing_hiddenMenu_content(buttonID){
+				$(".hidden_menu_nav").css({
+					color: "rgba(162,162,162,1.00)",
+					textDecoration: "none"
+				})
+				var lastChar_ID =  buttonID.charAt((buttonID.length)-1);
+				document.getElementsByClassName("hidden_menu_dynamic_content")[0].innerHTML = document.getElementById("footer_content_"+lastChar_ID).innerHTML;
+				$("#hidden_menu_"+lastChar_ID).css({
+					color: "rgba(250,254,255,1.00)",
+					textDecoration: "underline"
+				});
+			}
+			//hidden menu nav click event
+			function hidden_menu_click(){
+				var button_ID = this.getAttribute("id");
+				changing_hiddenMenu_content(button_ID);
+			}
+			
+			
+			//open the hidden menu
+			//nav bar click event
+			function open_hiddenMenu_changing_content(event){
+				event.preventDefault();
+				var button_ID = this.getAttribute("id");
+				changing_hiddenMenu_content(button_ID);
+				$(".hidden_menu").animate({
+					right: 0
+				}, 500)
+			}
+			
+			//close the hidden menu
+			$("#hidden_menu_close_btn").click(function(){
+				$(".hidden_menu").animate({
+					right: "-100%"
+					}, 500)
+			})
+			
+		})
+	</script>
+</body>
+</html>

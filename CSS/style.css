@@ -1,0 +1,92 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*Header*/
+.header{
+	height: 550px;
+	background-image: url(../img/glasses.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.header_nav{
+	width: 80%;
+	margin: 0 auto;
+}
+.header_nav .brand_name{
+	font-weight: bold;
+}
+.header_nav .header_navigation ul{
+	list-style-type: none;
+}
+.header_nav .header_navigation ul li{
+	display: inline;
+	margin-left: 5px;
+}
+.header_nav .header_navigation ul li a{
+	text-decoration: none;
+	color: #000000;
+	font-size: 13px;
+}
+
+/*centered text*/
+.header .centered_text_container{
+	width: 100%;
+	height: 93%;
+	overflow: hidden;
+}
+.header .centered_text_container .centered_text_wrapper{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.header .centered_text{
+	width: 350px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	color: #3E3E3E;
+	text-align: center;
+}
+/*End of centered text*/
+
+/*indicators*/
+.header_indicators_wrapper{
+	height: 400px;
+	width: 100px;
+	position: absolute;
+	right: 0;
+	z-index: 1;
+}
+.header_indicators_wrapper .indicators_position{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.header_indicators_wrapper .indicators_position .header_indicators{
+	width: 15px;
+	height: 80px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.header_indicators_wrapper .indicators_position .header_indicators div{
+	border: thin solid #373737;
+	width: 10px;
+	height: 10px;
+	margin-top: 10px;
+	border-radius: 50%;
+}
+/*End of header*/
+
+
