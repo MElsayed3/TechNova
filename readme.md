@@ -133,16 +133,16 @@ git clone <https://github.com/MElsayed3/TechNova.git>
 ![Home Screenshot](screenshots/home.jpg)
 
 ### About Us Section
-![Home Screenshot](screenshots/about.jpg)
+![AboutUS Screenshot](screenshots/about.jpg)
 
 ### What We Offer Section
-![Home Screenshot](screenshots/whatweoffer.jpg)
+![What We Offer Screenshot](screenshots/whatweoffer.jpg)
 
 ### Cases / How We Do Things Section
-![Home Screenshot](screenshots/cases.jpg)
+![Cases Screenshot](screenshots/cases.jpg)
 
 ### Pricing Section
-![Home Screenshot](screenshots/pricing.jpg)
+![Pricing Screenshot](screenshots/pricing.jpg)
 
 ### Contact Us Section
-![Home Screenshot](screenshots/contact.jpg)
+![Contact Screenshot](screenshots/contact.JPG)
